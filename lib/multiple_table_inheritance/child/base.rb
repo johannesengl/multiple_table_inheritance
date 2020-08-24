@@ -36,7 +36,7 @@ module MultipleTableInheritance
         
         def parent_association_class
           @parent_association_class ||= begin
-            reflection = create_reflection(:belongs_to, parent_association_name, {}, self)
+            reflection = create_reflection(:belongs_to, parent_association_name, nil, {}, self)
             reflection.klass
           end
         end
