@@ -11,7 +11,7 @@ module MultipleTableInheritance
       end
       
       module ClassMethods
-        delegate :as_supertype, :to => :scoped
+        delegate :as_supertype, :to => :all
         
         def acts_as_superclass(options={})
           options = Base::default_options.merge(options.to_options)

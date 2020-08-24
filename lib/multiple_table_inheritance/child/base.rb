@@ -106,7 +106,7 @@ module MultipleTableInheritance
           child_records = super(*args)
           
           ids = child_records.collect(&:id)
-          parent_records = parent_association_class.as_supertype.find_all_by_id(ids)
+          parent_records = parent_association_class.as_supertype.where(id: ids)
           
           child_records.each do |child|
             parent = parent_records.find { |parent| parent.id == child.id }
